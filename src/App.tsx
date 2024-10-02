@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { AppProvider } from "./AppContext";
+import { NameUpdater } from "./NameUpdater";
+import { ValueUpdater } from "./ValueUpdater";
+import { ItemDisplay } from "./ItemDisplay";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <div>
+        <h2>Update Names</h2>
+        <NameUpdater />
+        <h2>Update Values</h2>
+        <ValueUpdater />
+        <h2>Items</h2>
+        <ItemDisplay />
+      </div>
+    </AppProvider>
   );
-}
+};
 
 export default App;
